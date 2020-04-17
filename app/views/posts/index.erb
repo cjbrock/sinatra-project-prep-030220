@@ -1,7 +1,18 @@
-<h1>Here are all your posts</h1>
+<h1>Welcome to the Quote Collector!</h1>
+<h2>Wouldn't you like to <a href="/posts/new">create a post?</a></h2>
 
+<% if @user_posts %>
+<h2>Here are all your posts</h2>
+  <ul>
+  <% @user_posts.each do |post| %>
+    <li><a href="posts/<%=post.id%>"><%= post.character %> </a></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h2>Here are all the posts</h2>
 <ul>
 <% @posts.each do |post| %>
-  <li><a href="posts/<%=post.id%>"><%= post.title %> </a></li>
+  <li><a href="posts/<%=post.id%>"><%= post.character %> </a></li>
 <% end %>
 </ul>

@@ -16,4 +16,9 @@ class SessionsController < ApplicationController
     # redirect accordingly
   end
 
+  get '/logout' do
+    session.clear
+    redirect "/login"
+  end
+
 end
